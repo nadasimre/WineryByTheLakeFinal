@@ -1,0 +1,52 @@
+﻿body {
+    font-family: 'Cormorant Garamond', sans-serif;
+    background-image: url("../Images/indexBackground.jpg");
+}
+
+nav {
+    text-align: center;
+}
+
+a {
+    font-size: 5em;
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    padding: 5px;
+}
+
+    a#left {
+        color: crimson;
+        float: left;
+        background-color: #00000066;
+    }
+
+        a#left:hover {
+            color: black;
+            background: white;
+        }
+
+    a#center {
+        color: rosybrown;
+        display: inline-block;
+        background-color: #00000066;
+    }
+
+        a#center:hover {
+            color: black;
+            background: white;
+        }
+
+    a#right {
+        color: mediumseagreen;
+        float: right;
+        background-color: #00000066;
+    }
+
+        a#right:hover {
+            color: black;
+            background: white;
+        }

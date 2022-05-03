@@ -1,0 +1,33 @@
+﻿body {
+    background-image: linear-gradient(to bottom right, white, darksalmon);
+}
+
+h1 {
+    color: crimson;
+}
+
+th {
+    background-color: crimson;
+}
+
+a {
+    font-size: 1.5em;
+    text-decoration: none;
+    border-style: solid;
+    border-color: black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    padding: 5px;
+}
+
+a {
+    color: mediumpurple;
+    font-weight: 900;
+    background-color: #00000040;
+}
+
+    a:hover {
+        color: black;
+        background: white;
+    }

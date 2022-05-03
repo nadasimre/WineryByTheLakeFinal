@@ -1,0 +1,15 @@
+﻿html, body {
+    background-image: linear-gradient(to bottom right, white, bisque);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+h1 {
+    color: rosybrown;
+}
+
+th {
+    background-color: rosybrown;
+}

@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Winery By The Lake</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Styles/basicStyle.css" />
+    <link rel="stylesheet" href="Styles/wineStyle.css" />
+</head>
+<body>
+    <div id="header">
+        <h1>Wines</h1>
+        <a href="winesort.html">Sort Wines</a>
+    </div>
+
+    <div id="form">
+        <label>Name</label>
+        <input type="text" id="winename" />
+        <label>Price</label>
+        <input type="number" id="wineprice" />
+        <label>Sweetness</label>
+        <input type="text" id="sweetness" />
+        <label>Color</label>
+        <select id="color">
+            <option value="1" selected="selected">Fehér(1)</option>
+            <option value="2">Vörös(2)</option>
+            <option value="3">Rozé(3)</option>
+        </select>
+        <label>ID of Supplier</label>
+        <input type="number" id="supplierid" />
+        <button type="button" onclick="create()">Add Wine</button>
+    </div>
+
+    <div id="update">
+        <label>Name</label>
+        <input type="text" id="winenametoupdate" />
+        <label>Price</label>
+        <input type="number" id="winepricetoupdate" />
+        <label>Sweetness</label>
+        <input type="text" id="sweetnesstoupdate" />
+        <label>Color</label>
+        <select id="colortoupdate">
+            <option value="1">Fehér(1)</option>
+            <option value="2">Vörös(2)</option>
+            <option value="3">Rozé(3)</option>
+        </select>
+        <label>ID of Supplier</label>
+        <input type="number" id="supplieridtoupdate" />
+        <button type="button" onclick="update()">Update Wine</button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Sweetness</th>
+                <th>Color</th>
+                <th>ID of Supplier</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody id="table">
+        </tbody>
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/6.0.1/signalr.js"></script>
+    <script src="Scripts/wineScript.js"></script>
+</body>
+</html>

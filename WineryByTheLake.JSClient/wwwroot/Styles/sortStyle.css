@@ -1,0 +1,24 @@
+﻿html, body {
+    background-image: linear-gradient(to bottom right, white, mediumpurple);
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+table {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+    table#redtable th {
+        background-color: darkred;
+    }
+
+    table#whitetable th {
+        background-color: navajowhite;
+    }
+
+    table#rosetable th {
+        background-color: palevioletred;
+    }

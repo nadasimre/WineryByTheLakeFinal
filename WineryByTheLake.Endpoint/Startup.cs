@@ -73,6 +73,12 @@ namespace WineryByTheLake.Endpoint
 
             //app.UseHttpsRedirection();
 
+            app.UseCors(x => x
+                .AllowCredentials()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithOrigins("http://localhost:19615"));
+
             app.UseRouting();
 
             app.UseAuthorization();
