@@ -1,0 +1,38 @@
+﻿<Window x:Class="WineryByTheLake.WpfClient.WineSortWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WineryByTheLake.WpfClient"
+        xmlns:vms="clr-namespace:WineryByTheLake.WpfClient.ViewModels"
+        mc:Ignorable="d"
+        Title="Winery by the Lake" Height="450" Width="800">
+    <Window.DataContext>
+        <vms:SortWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Images/WineColors.jpg" />
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Button Content="Red" Command="{Binding RedCommand}" Background="DarkRed"  Margin="10" Padding="10"/>
+            <Button Content="White" Command="{Binding WhiteCommand}" Background="NavajoWhite" Margin="10" Padding="10"/>
+            <Button Content="Rose" Command="{Binding RoseCommand}" Background="HotPink" Margin="10" Padding="10"/>
+        </StackPanel>
+        <ListBox ItemsSource="{Binding Wines}" Grid.Column="1" FontSize="18" Background="MediumPurple">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="{Binding Name}" ContentStringFormat=" {0},"/>
+                        <Label Content="{Binding Price}" ContentStringFormat="Price: {0} HUF," />
+                        <Label Content="{Binding Color}" ContentStringFormat="Color: {0}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

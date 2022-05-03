@@ -1,0 +1,488 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WineryByTheLake.Logic</name>
+    </assembly>
+    <members>
+        <member name="T:WineryByTheLake.Logic.ListingLogic">
+            <summary>
+            Implements the methods which the interface requires.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.#ctor(WineryByTheLake.Repository.IWineRepository,WineryByTheLake.Repository.ISupplierRepository,WineryByTheLake.Repository.IRegionRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Logic.ListingLogic"/> class.
+            </summary>
+            <param name="wine">Reference of wine repository.</param>
+            <param name="supplier">Reference of supplier repository.</param>
+            <param name="region">Reference of region repository.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetAllRegions">
+            <summary>
+            Gets all the regions.
+            </summary>
+            <returns>Returns a list of all the regions.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetAllSuppliers">
+            <summary>
+            Gets all the suppliers.
+            </summary>
+            <returns>Returns a list of all the suppliers.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetAllWines">
+            <summary>
+            Gets all the wines.
+            </summary>
+            <returns>Returns a list of all the wines.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetRegion(System.Int32)">
+            <summary>
+            Gets a region by its id.
+            </summary>
+            <param name="id">ID of the wanted region.</param>
+            <returns>Returns a region entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetSupplier(System.Int32)">
+            <summary>
+            Gets a supplier by its id.
+            </summary>
+            <param name="id">ID of the wanted supplier.</param>
+            <returns>Returns a supplier entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetSuppliers(System.Int32)">
+            <summary>
+            Gets the suppliers of a region.
+            </summary>
+            <param name="regionid">ID of the region where the suppliers live we want to get.</param>
+            <returns>Returns a list of the suppliers of the region.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetWine(System.Int32)">
+            <summary>
+            Gets a wine by its id.
+            </summary>
+            <param name="id">ID of the wanted wine.</param>
+            <returns>Returns a wine entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.GetWines(System.Int32)">
+            <summary>
+            Gets the wines of a specified supplier.
+            </summary>
+            <param name="supplierid">ID of the supplier whose wines we want to get.</param>
+            <returns>Returns a list of all the wines.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ListingLogic.WinePriceSum(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Calculates the sum of the wines of the suppliers.
+            </summary>
+            /// <param name="supplier">The supplier object whose wine prices we want to sum.</param>
+        </member>
+        <member name="T:WineryByTheLake.Logic.ModifyLogic">
+            <summary>
+            Implements the modification methods.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.#ctor(WineryByTheLake.Repository.IWineRepository,WineryByTheLake.Repository.ISupplierRepository,WineryByTheLake.Repository.IRegionRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Logic.ModifyLogic"/> class.
+            </summary>
+            <param name="wine">Reference of wine repository.</param>
+            <param name="supplier">Reference of supplier repository.</param>
+            <param name="region">Reference of region repository.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.ChangeWinePrice(System.Int32,System.Int32)">
+            <summary>
+            We can change the price of a wine with this method.
+            </summary>
+            <param name="wineId">The ID of the wine, which price will be changed.</param>
+            <param name="newPrice">The new price of the wine.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.InsertRegion(WineryByTheLake.Models.Region)">
+            <summary>
+            We can insert a region with this method.
+            </summary>
+            <param name="region">The region, which will be insterted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.InsertSupplier(WineryByTheLake.Models.Supplier)">
+            <summary>
+            We can insert a supplier with this method.
+            </summary>
+            <param name="supplier">The supplier, which will be insterted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.InsertWine(WineryByTheLake.Models.Wine)">
+            <summary>
+            We can insert a wine with this method.
+            </summary>
+            <param name="wine">The wine, which will be insterted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.UpdateWine(WineryByTheLake.Models.Wine)">
+            <summary>
+            We can change a wine with this method.
+            </summary>
+            <param name="entity">The wine, which will be changed.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.UpdateSupplier(WineryByTheLake.Models.Supplier)">
+            <summary>
+            We can change a supplier with this method.
+            </summary>
+            <param name="entity">The supplier, which will be changed.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.UpdateRegion(WineryByTheLake.Models.Region)">
+            <summary>
+            We can change a region with this method.
+            </summary>
+            <param name="entity">The region, which will be changed.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.RemoveRegion(WineryByTheLake.Models.Region)">
+            <summary>
+            We can remove a region with this method.
+            </summary>
+            <param name="region">The region, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.RemoveRegion(System.Int32)">
+            <summary>
+            We can remove a region with this method.
+            </summary>
+            <param name="id">The ID of the region, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.RemoveSupplier(WineryByTheLake.Models.Supplier)">
+            <summary>
+            We can remove a supplier with this method.
+            </summary>
+            <param name="supplier">The supplier, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.RemoveSupplier(System.Int32)">
+            <summary>
+            We can remove a supplier with this method.
+            </summary>
+            <param name="id">The ID of the supplier, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.RemoveWine(WineryByTheLake.Models.Wine)">
+            <summary>
+            We can remove a wine with this method.
+            </summary>
+            <param name="wine">The wine, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ModifyLogic.RemoveWine(System.Int32)">
+            <summary>
+            We can remove a wine with this method.
+            </summary>
+            <param name="id">The ID of the wine, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Logic.ProductLogic">
+            <summary>
+            Implements the methods required to track the properties of the products.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.#ctor(WineryByTheLake.Repository.IWineRepository,WineryByTheLake.Repository.ISupplierRepository,WineryByTheLake.Repository.IRegionRepository)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Logic.ProductLogic"/> class.
+            </summary>
+            <param name="wine">Reference of wine repository.</param>
+            <param name="supplier">Reference of supplier repository.</param>
+            <param name="region">Reference of region repository.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.AverageWinePriceBySupplier">
+            <summary>
+            Returns the average of the prices of the wines by suppliers.
+            </summary>
+            <returns>Returns a list of wine price averages distributed by suppliers.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.AverageWinePriceBySupplierAsync">
+            <summary>
+            Async version of the method AverageWinePriceBySupplier.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.AverageWinePriceByRegion">
+            <summary>
+            Returns the average of the prices of the wines by region.
+            </summary>
+            <returns>Returns a list of wine price averages distributed by regions.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.AverageWinePriceByRegionAsync">
+            <summary>
+            Async version of the method AverageWinePriceByRegion.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.AverageSupplierStock">
+            <summary>
+            Returns the average value of the stocks the suppliers have.
+            </summary>
+            <returns>Returns a list of stock price averages distributed by regions.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.AverageSupplierStockAsync">
+            <summary>
+            Async version of the method AverageSupplierStock.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.Rose">
+            <summary>
+            Returns the rose wines.
+            </summary>
+            <returns>Returns a list of wines which color is rose.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.RoseAsync">
+            <summary>
+            Async version of the method Rose.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.Red">
+            <summary>
+            Returns the red wines.
+            </summary>
+            <returns>Returns a list of wines which color is rose.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.RedAsync">
+            <summary>
+            Async version of the method Red.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.White">
+            <summary>
+            Returns the white wines.
+            </summary>
+            <returns>Returns a list of wines which color is rose.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.ProductLogic.WhiteAsync">
+            <summary>
+            Async version of the method White.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Logic.IListing">
+            <summary>
+            Specifies the listing methods.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetWine(System.Int32)">
+            <summary>
+            Gets a wine by its id.
+            </summary>
+            <param name="id">ID of the wanted wine.</param>
+            <returns>Returns a wine entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetAllWines">
+            <summary>
+            Gets all the wines.
+            </summary>
+            <returns>Returns a list of all the wines.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetWines(System.Int32)">
+            <summary>
+            Gets the wines of a specified supplier.
+            </summary>
+            <param name="supplierid">ID of the supplier whose wines we want to get.</param>
+            <returns>Returns a list of all the wines.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetSupplier(System.Int32)">
+            <summary>
+            Gets a supplier by its id.
+            </summary>
+            <param name="id">ID of the wanted supplier.</param>
+            <returns>Returns a supplier entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetAllSuppliers">
+            <summary>
+            Gets all the suppliers.
+            </summary>
+            <returns>Returns a list of all the suppliers.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetSuppliers(System.Int32)">
+            <summary>
+            Gets the suppliers of a region.
+            </summary>
+            <param name="regionid">ID of the region where the suppliers live we want to get.</param>
+            <returns>Returns a list of the suppliers of the region.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetRegion(System.Int32)">
+            <summary>
+            Gets a region by its id.
+            </summary>
+            <param name="id">ID of the wanted region.</param>
+            <returns>Returns a region entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.GetAllRegions">
+            <summary>
+            Gets all the regions.
+            </summary>
+            <returns>Returns a list of all the regions.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IListing.WinePriceSum(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Calculates the sum of the wines of the suppliers.
+            </summary>
+            /// <param name="supplier">The supplier object whose wine prices we want to sum.</param>
+        </member>
+        <member name="T:WineryByTheLake.Logic.IModify">
+            <summary>
+            Specifies the modification methods.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.InsertWine(WineryByTheLake.Models.Wine)">
+            <summary>
+            We can insert a wine with this method.
+            </summary>
+            <param name="wine">The wine, which will be insterted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.RemoveWine(WineryByTheLake.Models.Wine)">
+            <summary>
+            We can remove a wine with this method.
+            </summary>
+            <param name="wine">The wine, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.RemoveWine(System.Int32)">
+            <summary>
+            We can remove a wine with this method.
+            </summary>
+            <param name="id">The ID of the wine, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.ChangeWinePrice(System.Int32,System.Int32)">
+            <summary>
+            We can change the price of a wine with this method.
+            </summary>
+            <param name="wineId">The ID of the wine, which price will be changed.</param>
+            <param name="newPrice">The new price of the wine.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.UpdateWine(WineryByTheLake.Models.Wine)">
+            <summary>
+            We can change a wine with this method.
+            </summary>
+            <param name="entity">The wine, which will be changed.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.UpdateSupplier(WineryByTheLake.Models.Supplier)">
+            <summary>
+            We can change a supplier with this method.
+            </summary>
+            <param name="entity">The supplier, which will be changed.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.UpdateRegion(WineryByTheLake.Models.Region)">
+            <summary>
+            We can change a region with this method.
+            </summary>
+            <param name="entity">The region, which will be changed.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.InsertSupplier(WineryByTheLake.Models.Supplier)">
+            <summary>
+            We can insert a supplier with this method.
+            </summary>
+            <param name="supplier">The supplier, which will be insterted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.RemoveSupplier(WineryByTheLake.Models.Supplier)">
+            <summary>
+            We can remove a supplier with this method.
+            </summary>
+            <param name="supplier">The supplier, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.RemoveSupplier(System.Int32)">
+            <summary>
+            We can remove a supplier with this method.
+            </summary>
+            <param name="id">The ID of the supplier, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.InsertRegion(WineryByTheLake.Models.Region)">
+            <summary>
+            We can insert a region with this method.
+            </summary>
+            <param name="region">The region, which will be insterted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.RemoveRegion(WineryByTheLake.Models.Region)">
+            <summary>
+            We can remove a region with this method.
+            </summary>
+            <param name="region">The region, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IModify.RemoveRegion(System.Int32)">
+            <summary>
+            We can remove a region with this method.
+            </summary>
+            <param name="id">The ID of the region, which will be removed.</param>
+            <returns>Returns true if the removal was succesful, or false if it wasnt.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Logic.IProduct">
+            <summary>
+            Specifies the methods required to track the properties of the products.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.AverageWinePriceBySupplier">
+            <summary>
+            Returns the average of the prices of the wines by supplier.
+            </summary>
+            <returns>Returns a list of wine price averages distributed by suppliers.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.AverageWinePriceBySupplierAsync">
+            <summary>
+            Async version of the method AverageWinePriceBySupplier.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.AverageWinePriceByRegion">
+            <summary>
+            Returns the average of the prices of the wines by region.
+            </summary>
+            <returns>Returns a list of wine price averages distributed by regions.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.AverageWinePriceByRegionAsync">
+            <summary>
+            Async version of the method AverageWinePriceByRegion.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.AverageSupplierStock">
+            <summary>
+            Returns the average value of the stocks the suppliers have.
+            </summary>
+            <returns>Returns a list of stock price averages.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.Rose">
+            <summary>
+            Returns the rose wines.
+            </summary>
+            <returns>Returns a list of wines which color is rose.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.RoseAsync">
+            <summary>
+            Async version of the method Rose.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.Red">
+            <summary>
+            Returns the red wines.
+            </summary>
+            <returns>Returns a list of wines which color is rose.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.RedAsync">
+            <summary>
+            Async version of the method Red.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.White">
+            <summary>
+            Returns the white wines.
+            </summary>
+            <returns>Returns a list of wines which color is rose.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Logic.IProduct.WhiteAsync">
+            <summary>
+            Async version of the method White.
+            </summary>
+            <returns>A task object.</returns>
+        </member>
+    </members>
+</doc>

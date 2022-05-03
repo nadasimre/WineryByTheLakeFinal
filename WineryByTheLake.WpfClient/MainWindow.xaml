@@ -1,0 +1,112 @@
+﻿<Window x:Class="WineryByTheLake.WpfClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WineryByTheLake.WpfClient"
+        xmlns:vms="clr-namespace:WineryByTheLake.WpfClient.ViewModels"
+        mc:Ignorable="d"
+        Title="Winery by the Lake" Height="800" Width="1400">
+    <Window.DataContext>
+        <vms:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--########## WINE ##########-->
+        <ListBox ItemsSource="{Binding Wines}" SelectedItem="{Binding SelectedWine}" Grid.Column="0" Grid.Row="1" Background="IndianRed">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Column="0" Grid.Row="0">
+            
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Images/Wine.jpg" />
+            </Grid.Background>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Label Content="Wines" Background="MediumPurple"/>
+                    <Label Content="Name" FontWeight="ExtraBold" Foreground="IndianRed" FontSize="20" />
+                    <TextBox Text="{Binding SelectedWine.Name}" Padding="10" Background="Azure"/>
+                    <Label Content="Price" FontWeight="ExtraBold" Foreground="IndianRed" FontSize="20"/>
+                    <TextBox Text="{Binding SelectedWine.Price}" PreviewTextInput="TextBox_NumberOnly" Padding="10" Background="Azure"/>
+                    <Label Content="Sweetness" FontWeight="ExtraBold" Foreground="IndianRed" FontSize="20"/>
+                    <TextBox Text="{Binding SelectedWine.Sweetness}" Background="Azure" Padding="10"/>
+                    <Label Content="Color" FontWeight="ExtraBold" Foreground="IndianRed" FontSize="20"/>
+                    <ComboBox x:Name="wineColor" Background="Azure" SelectedItem="{Binding SelectedWine.Color}"/>
+                    <Label Content="Id of supplier" FontWeight="ExtraBold" Foreground="IndianRed" FontSize="20"/>
+                    <Label Content="{Binding SelectedWine.SupplierID}" Padding="10" Margin="0,0,0,15" Background="Azure"/>
+                    <Button Content="Create Wine" Command="{Binding CreateWineCommand}" Margin="10" Padding="10" Background="IndianRed"/>
+                    <Button Content="Update Wine" Command="{Binding UpdateWineCommand}" Margin="10" Padding="10" Background="IndianRed"/>
+                    <Button Content="Delete Wine" Command="{Binding DeleteWineCommand}" Margin="10" Padding="10" Background="IndianRed"/>
+                    <Button Content="Sort Wine" Command="{Binding SortWineCommand}" Margin="10" Padding="10" Background="IndianRed"/>
+                    <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+        
+        <!--########## SUPPLIER ##########-->
+        <ListBox ItemsSource="{Binding Suppliers}" SelectedItem="{Binding SelectedSupplier}" Grid.Column="1" Grid.Row="1" Background="Bisque">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Column="1" Grid.Row="0">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Images/Supplier.jpg" />
+            </Grid.Background>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Label Content="Suppliers" Background="MediumPurple"/>
+                    <Label Content="Name" FontWeight="ExtraBold" Foreground="Bisque" FontSize="20"/>
+                    <TextBox Text="{Binding SelectedSupplier.Name}" Padding="10" Background="Azure"/>
+                    <Label Content="Id of region" FontWeight="ExtraBold" Foreground="Bisque" FontSize="20"/>
+                    <Label Content="{Binding SelectedSupplier.RegionID}" Padding="10" Background="Azure"/>
+                    <Button Content="Create Supplier" Command="{Binding CreateSupplierCommand}" Margin="10" Padding="10" Background="Bisque"/>
+                    <Button Content="Update Supplier" Command="{Binding UpdateSupplierCommand}" Margin="10" Padding="10" Background="Bisque"/>
+                    <Button Content="Delete Supplier" Command="{Binding DeleteSupplierCommand}" Margin="10" Padding="10" Background="Bisque"/>
+                    <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+
+        <!--########## REGION ##########-->
+        <ListBox ItemsSource="{Binding Regions}" SelectedItem="{Binding SelectedRegion}" Grid.Column="2" Grid.Row="1" Background="DarkGreen">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Label Content="{Binding Name}" />
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Column="2" Grid.Row="0">
+            <Grid.Background>
+                <ImageBrush Stretch="Fill" ImageSource="Images/Region.jpg" />
+            </Grid.Background>
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Label Content="Regions" Background="MediumPurple"/>
+                    <Label Content="Name" FontWeight="ExtraBold" Foreground="DarkGreen" FontSize="20"/>
+                    <TextBox Text="{Binding SelectedRegion.Name}" Padding="10" Margin="0,0,0,15" Background="Azure"/>
+                    <Button Content="Create Region" Command="{Binding CreateRegionCommand}" Margin="10" Padding="10" Background="DarkGreen"/>
+                    <Button Content="Update Region" Command="{Binding UpdateRegionCommand}" Margin="10" Padding="10" Background="DarkGreen"/>
+                    <Button Content="Delete Region" Command="{Binding DeleteRegionCommand}" Margin="10" Padding="10" Background="DarkGreen"/>
+                    <Label Content="{Binding ErrorMessage}" FontSize="18" Foreground="Red" HorizontalContentAlignment="Center" />
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</Window>

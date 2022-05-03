@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WineryByTheLake.Program</name>
+    </assembly>
+    <members>
+        <member name="T:WineryByTheLake.Program.ExtensionClass">
+            <summary>
+            Contains the methods that implement the menu.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Program.ExtensionClass.ToConsole``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+            <summary>
+            This method can write the input on the console.
+            </summary>
+            /// <typeparam name="T">Generic type.</typeparam>
+            <param name="items">We want to write this object on the console.</param>
+            <param name="text">This will be the title of the input.</param>
+        </member>
+        <member name="M:WineryByTheLake.Program.ExtensionClass.Start(WineryByTheLake.Program.Factory)">
+            <summary>
+            This method starts the program.
+            </summary>
+            <param name="factory">Contains all elements.</param>
+        </member>
+        <member name="T:WineryByTheLake.Program.Factory">
+            <summary>
+            Entities which are needed for the program to run, are here.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Program.Factory.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Program.Factory"/> class.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Program.Factory.Ctx">
+            <summary>
+            Gets the database entity, it is required for the repository classes.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Program.Factory.Listing">
+            <summary>
+            Gets the ListingLogic entity.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Program.Factory.Modify">
+            <summary>
+            Gets the ModifyLogic entity.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Program.Factory.Product">
+            <summary>
+            Gets the ProductLogic entity.
+            </summary>
+        </member>
+        <member name="T:WineryByTheLake.Program.Program">
+            <summary>
+            Everything starts here.
+            </summary>
+        </member>
+    </members>
+</doc>

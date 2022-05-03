@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WineryByTheLake.Repository</name>
+    </assembly>
+    <members>
+        <member name="T:WineryByTheLake.Repository.WineryDbContext">
+            <summary>
+            Database context class.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineryDbContext.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Repository.WineryDbContext"/> class.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Repository.WineryDbContext.Wines">
+            <summary>
+            Gets or sets the wine table.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Repository.WineryDbContext.Suppliers">
+            <summary>
+            Gets or sets the supplier table.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Repository.WineryDbContext.Regions">
+            <summary>
+            Gets or sets the region table.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineryDbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineryDbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc/>
+        </member>
+        <member name="T:WineryByTheLake.Repository.BasicRepository`1">
+            <summary>
+            Contains general methods.
+            </summary>
+            <typeparam name="T">Generic type.</typeparam>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Repository.BasicRepository`1"/> class.
+            </summary>
+            <param name="ctx">Reference of database.</param>
+        </member>
+        <member name="P:WineryByTheLake.Repository.BasicRepository`1.Ctx">
+            <summary>
+            Gets or sets the database entity.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.GetAll">
+            <summary>
+            Returns all the elements of a table.
+            </summary>
+            /// <returns>All the entities from a table specified by the generic type.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.GetOne(System.Int32)">
+            <summary>
+            Returns an entity by its ID.
+            </summary>
+            <param name="id">The ID of the wanted entity.</param>
+            <returns>Returns an entity specified by the generic type.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.GetOnesId(System.String)">
+            <summary>
+            Returns an ID by the name of the entity.
+            </summary>
+            <param name="name">The name of the entity with the wanted ID.</param>
+            <returns>Returns an ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.Insert(`0)">
+            <summary>
+            Insert an entity to the right table.
+            </summary>
+            <param name="entity">The entity which needs to be inserted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.RemoveById(System.Int32)">
+            <summary>
+            Removes an entity, the input is the ID of the entity we want to remove.
+            </summary>
+            <param name="id">The if of the entity which will be removed.</param>
+            <returns>Returns true if it was succesful, returns false if not.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.BasicRepository`1.RemoveByObject(`0)">
+            <summary>
+            Removes an entity, the input is the entity we want to remove.
+            </summary>
+            <param name="tobedeleted">The entity which will be removed.</param>
+            <returns>Returns true if it was succesful, returns false if not.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Repository.IRegionRepository">
+            <summary>
+            Specifies all the methods the RegionRepository must implement.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRegionRepository.Update(WineryByTheLake.Models.Region)">
+            <summary>
+            Changes a specified region.
+            </summary>
+            <param name="entity">The region we want to change.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRegionRepository.GetSuppliers(System.Int32)">
+            <summary>
+            Returns the suppliers who live in the region.
+            </summary>
+            <param name="regionid">The ID of the Supplier whose wines we want to get.</param>
+            <returns>Returns the suppliers of a single region.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Repository.IRepository`1">
+            <summary>
+            Specifies all the methods every class in the Repository layer must implement.
+            </summary>
+            <typeparam name="T">Generic type.</typeparam>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRepository`1.GetOne(System.Int32)">
+            <summary>
+            Returns an entity by its ID.
+            </summary>
+            <param name="id">The ID of the wanted entity.</param>
+            <returns>Returns an entity.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRepository`1.GetOnesId(System.String)">
+            <summary>
+            Returns an ID by the name of the entity.
+            </summary>
+            <param name="name">The name of the entity with the wanted ID.</param>
+            <returns>Returns an ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRepository`1.GetAll">
+            <summary>
+            Returns all entities.
+            </summary>
+            <returns>Returns all the entities which have the specified generic type.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRepository`1.Insert(`0)">
+            <summary>
+            Insert an entity to the right table.
+            </summary>
+            <param name="entity">The entity which needs to be inserted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRepository`1.RemoveByObject(`0)">
+            <summary>
+            Removes an entity, the input is the entity we want to remove.
+            </summary>
+            <param name="tobedeleted">The entity which will be removed.</param>
+            <returns>Returns true if it was succesful, returns false if not.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IRepository`1.RemoveById(System.Int32)">
+            <summary>
+            Removes an entity, the input is the ID of the entity we want to remove.
+            </summary>
+            <param name="id">The if of the entity which will be removed.</param>
+            <returns>Returns true if it was succesful, returns false if not.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Repository.ISupplierRepository">
+            <summary>
+            Specifies all the methods the SupplierRepository must implement.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.ISupplierRepository.Update(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Changes a specified supplier.
+            </summary>
+            <param name="entity">The supplier we want to change.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.ISupplierRepository.GetWines(System.Int32)">
+            <summary>
+            Returns the wines which the supplier has.
+            </summary>
+            <param name="supplierid">The ID of the Supplier whose wines we want to get.</param>
+            <returns>Returns the wines of a single supplier.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.ISupplierRepository.CalculateWinePrice(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Calculates the sum of the prices of the wines of a single supplier.
+            </summary>
+            <param name="supplier">The Supplier whose wines we want to sum.</param>
+        </member>
+        <member name="T:WineryByTheLake.Repository.IWineRepository">
+            <summary>
+            Specifies all the methods the WineRepository must implement.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IWineRepository.Update(WineryByTheLake.Models.Wine)">
+            <summary>
+            Changes a specified wine.
+            </summary>
+            <param name="entity">The wine we want to change.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IWineRepository.ChangePrice(System.Int32,System.Int32)">
+            <summary>
+            Changes the price of a specified wine.
+            </summary>
+            <param name="id">The ID of the wine we want to change the price of.</param>
+            <param name="newprice">The new price of the wine.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.IWineRepository.ChangeSweetness(System.Int32,System.String)">
+            <summary>
+             Changes the sweetness of a specified wine.
+            </summary>
+            <param name="id">The ID of the wine we want to change the sweetness of.</param>
+            <param name="newsweetness">The new sweetness of the wine.</param>
+        </member>
+        <member name="T:WineryByTheLake.Repository.RegionRepository">
+            <summary>
+            Contains methods specified to regions.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.RegionRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Repository.RegionRepository"/> class.
+            </summary>
+            <param name="ctx">Reference of database.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.RegionRepository.GetOne(System.Int32)">
+            <summary>
+            Returns a region by its ID.
+            </summary>
+            <param name="id">The ID of the wanted region.</param>
+            <returns>Returns a region entity specified by the ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.RegionRepository.GetOnesId(System.String)">
+            <summary>
+            Returns an ID by the name of the region.
+            </summary>
+            <param name="name">The name of the region with the wanted ID.</param>
+            <returns>Returns an ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.RegionRepository.Insert(WineryByTheLake.Models.Region)">
+            <summary>
+            Insert a region to the right table.
+            </summary>
+            <param name="entity">The region entity which needs to be inserted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.RegionRepository.Update(WineryByTheLake.Models.Region)">
+            <summary>
+            Changes a specified region.
+            </summary>
+            <param name="entity">The region we want to change.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.RegionRepository.GetSuppliers(System.Int32)">
+            <summary>
+            Returns the suppliers who live in the region.
+            </summary>
+            <param name="regionid">The ID of the Supplier whose wines we want to get.</param>
+            <returns>Returns the suppliers of a single region.</returns>
+        </member>
+        <member name="T:WineryByTheLake.Repository.SupplierRepository">
+            <summary>
+            Contains methods specified to suppliers.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Repository.SupplierRepository"/> class.
+            </summary>
+            <param name="ctx">Reference of database.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.GetOne(System.Int32)">
+            <summary>
+            Returns a supplier by its ID.
+            </summary>
+            <param name="id">The ID of the wanted supplier.</param>
+            <returns>Returns a supplier entity specified by the ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.GetOnesId(System.String)">
+            <summary>
+            Returns an ID by the name of the supplier.
+            </summary>
+            <param name="name">The name of the supplier with the wanted ID.</param>
+            <returns>Returns an ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.Insert(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Insert a supplier to the right table.
+            </summary>
+            <param name="entity">The supplier entity which needs to be inserted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.Update(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Changes a specified supplier.
+            </summary>
+            <param name="entity">The supplier we want to change.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.GetWines(System.Int32)">
+            <summary>
+            Returns the wines which the supplier has.
+            </summary>
+            <param name="supplierid">The ID of the Supplier whose wines we want to get.</param>
+            <returns>Returns the wines of a single supplier.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.SupplierRepository.CalculateWinePrice(WineryByTheLake.Models.Supplier)">
+            <summary>
+            Calculates the sum of the prices of the wines of a single supplier.
+            </summary>
+            <param name="supplier">The Supplier whose wines we want to sum.</param>
+        </member>
+        <member name="T:WineryByTheLake.Repository.WineRepository">
+            <summary>
+            Contains methods specified to wines.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.#ctor(Microsoft.EntityFrameworkCore.DbContext)">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Repository.WineRepository"/> class.
+            </summary>
+            <param name="ctx">Reference of database.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.GetOne(System.Int32)">
+            <summary>
+            Returns a wine by its ID.
+            </summary>
+            <param name="id">The ID of the wanted wine.</param>
+            <returns>Returns a wine entity specified by the ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.GetOnesId(System.String)">
+            <summary>
+            Returns an ID by the name of the wine.
+            </summary>
+            <param name="name">The name of the wine with the wanted ID.</param>
+            <returns>Returns an ID.</returns>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.Insert(WineryByTheLake.Models.Wine)">
+            <summary>
+            Insert a wine to the right table.
+            </summary>
+            <param name="entity">The wine entity which needs to be inserted.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.Update(WineryByTheLake.Models.Wine)">
+            <summary>
+            Changes a specified wine.
+            </summary>
+            <param name="entity">The wine we want to change.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.ChangePrice(System.Int32,System.Int32)">
+            <summary>
+            Changes the price of a specified wine.
+            </summary>
+            <param name="id">The ID of the wine we want to change the price of.</param>
+            <param name="newprice">The new price of the wine.</param>
+        </member>
+        <member name="M:WineryByTheLake.Repository.WineRepository.ChangeSweetness(System.Int32,System.String)">
+            <summary>
+             Changes the sweetness of a specified wine.
+            </summary>
+            <param name="id">The ID of the wine we want to change the sweetness of.</param>
+            <param name="newsweetness">The new sweetness of the wine.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+	<PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\WineryByTheLake.Logic\WineryByTheLake.Logic.csproj" />
+		<ProjectReference Include="..\WineryByTheLake.Models\WineryByTheLake.Models.csproj" />
+		<ProjectReference Include="..\WineryByTheLake.Repository\WineryByTheLake.Repository.csproj" />
+	</ItemGroup>
+
+</Project>

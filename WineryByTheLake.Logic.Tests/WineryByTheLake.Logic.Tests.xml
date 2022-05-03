@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WineryByTheLake.Logic.Tests</name>
+    </assembly>
+    <members>
+        <member name="T:WineryByTheLake.Logic.Tests.ListingLogicTest">
+            <summary>
+            Testing class of the listing logic class.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ListingLogicTest.TestGetWine">
+            <summary>
+            Test of the GetWine method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ListingLogicTest.TestGetAllSuppliers">
+            <summary>
+            Test of the GetAllSuppliers method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ListingLogicTest.TestGetRegion">
+            <summary>
+            Test of the GetRegion method.
+            </summary>
+        </member>
+        <member name="T:WineryByTheLake.Logic.Tests.MockedRepos">
+            <summary>
+            Creates the mocked repositories for the tests.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.MockedRepos.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:WineryByTheLake.Logic.Tests.MockedRepos"/> class.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Logic.Tests.MockedRepos.MockedWineRepository">
+            <summary>
+            Gets the wine repository property.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Logic.Tests.MockedRepos.MockedSupplierRepository">
+            <summary>
+            Gets the wine repository property.
+            </summary>
+        </member>
+        <member name="P:WineryByTheLake.Logic.Tests.MockedRepos.MockedRegionRepository">
+            <summary>
+            Gets the wine repository property.
+            </summary>
+        </member>
+        <member name="T:WineryByTheLake.Logic.Tests.ModifyLogicTest">
+            <summary>
+            Testing class of the modify logic class.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ModifyLogicTest.TestRemoveWine">
+            <summary>
+            Test of the RemoveWine (by Id) method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ModifyLogicTest.TestInsertRegion">
+            <summary>
+            Test of the InsertRegion method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ModifyLogicTest.TestChangeWinePrice">
+            <summary>
+            Test of the ChangeWinePrice method.
+            </summary>
+        </member>
+        <member name="T:WineryByTheLake.Logic.Tests.ProductLogicTest">
+            <summary>
+            Testing class of the product logic class.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ProductLogicTest.TestAverageWinePriceBySupplier">
+            <summary>
+            Test of the AverageWinePriceBySupplier method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ProductLogicTest.TestAverageWinePriceByRegion">
+            <summary>
+            Test of the AverageWinePriceByRegion method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ProductLogicTest.TestAverageSupplierStock">
+            <summary>
+            Test of the AverageSupplierStock method.
+            </summary>
+        </member>
+        <member name="M:WineryByTheLake.Logic.Tests.ProductLogicTest.TestRose">
+            <summary>
+            Test of the Rose method.
+            </summary>
+        </member>
+    </members>
+</doc>
