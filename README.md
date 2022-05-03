@@ -1,6 +1,6 @@
 # WineryByTheLake #
 
-This is the product inventory app for a wine specialty store named "Winery By The Lake". This is the upgraded version, which has a wpf user interface, instead of the console menu.
+This is the product inventory app for a wine specialty store named "Winery By The Lake". This is the upgraded version, which has a wpf user interface and a web page, instead of the console menu.
 
 ### Functions: ###
 
